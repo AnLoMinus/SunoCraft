@@ -5,6 +5,9 @@
 
 # 🎧 **Suno Insert – “Bereshit Energy Flow”**
 
+[AnLoMinus ~ Bereshit Energy Flow.mp3](https://github.com/user-attachments/files/23679299/AnLoMinus.Bereshit.Energy.Flow.mp3)
+
+
 *(מיועד לשיר פרשת השבוע: בראשית)*
 
 ```
