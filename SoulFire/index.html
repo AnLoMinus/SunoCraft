@@ -1,0 +1,975 @@
+<!DOCTYPE html>
+<html lang="he">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SoulFire Ascension – SA | Holy Album by AnLoMinus</title>
+    <style>
+        :root {
+            --bg-main: #050816;
+            --bg-soft: #0b1020;
+            --accent: #ffcc4d;
+            --accent-soft: rgba(255, 204, 77, 0.12);
+            --accent-2: #6b5bff;
+            --accent-3: #19d3ff;
+            --text-main: #f7f7ff;
+            --text-muted: #b3b8d0;
+            --border-soft: #242842;
+            --radius-xl: 22px;
+            --shadow-soft: 0 18px 40px rgba(0, 0, 0, 0.55);
+            --max-width: 1120px;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            direction: rtl;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                sans-serif;
+            background: radial-gradient(circle at top, #1b1f3b 0, #050816 45%, #02030a 100%);
+            color: var(--text-main);
+            line-height: 1.6;
+        }
+
+        .page {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 24px 16px 48px;
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 50;
+            backdrop-filter: blur(18px);
+            background: linear-gradient(to bottom,
+                    rgba(5, 8, 22, 0.98),
+                    rgba(5, 8, 22, 0.85),
+                    transparent);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+        }
+
+        .nav-inner {
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 12px 16px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 12px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .brand-icon {
+            width: 34px;
+            height: 34px;
+            border-radius: 999px;
+            background: conic-gradient(from 210deg,
+                    #ffcc4d,
+                    #ff7b5c,
+                    #6b5bff,
+                    #19d3ff,
+                    #ffcc4d);
+            box-shadow: 0 0 26px rgba(255, 204, 77, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 19px;
+        }
+
+        .brand-text-main {
+            font-weight: 700;
+            font-size: 18px;
+            letter-spacing: 0.03em;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .brand-text-main span:nth-child(2) {
+            font-size: 11px;
+            color: var(--text-muted);
+            font-weight: 500;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+            justify-content: flex-end;
+        }
+
+        .nav-links a {
+            font-size: 13px;
+            color: var(--text-muted);
+            text-decoration: none;
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+            background: rgba(255, 255, 255, 0.02);
+        }
+
+        .nav-links a:hover {
+            color: var(--accent);
+            border-color: rgba(255, 204, 77, 0.45);
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: minmax(0, 2.1fr) minmax(0, 1.6fr);
+            gap: 24px;
+            margin-top: 32px;
+            align-items: center;
+        }
+
+        @media (max-width: 860px) {
+            .hero {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        .hero-text {
+            padding: 20px 18px;
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: radial-gradient(circle at top right, #1b1f3b 0, #050816 55%);
+            box-shadow: var(--shadow-soft);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-pill {
+            font-size: 11px;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            padding: 4px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            background: rgba(0, 0, 0, 0.45);
+            color: var(--text-muted);
+            margin-bottom: 10px;
+        }
+
+        .hero-pill span.emoji {
+            font-size: 14px;
+        }
+
+        .hero h1 {
+            font-size: 28px;
+            margin-bottom: 8px;
+        }
+
+        .hero h1 span {
+            background: linear-gradient(120deg, #ffcc4d, #ff7b5c, #19d3ff);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+        }
+
+        .hero-subtitle {
+            font-size: 15px;
+            color: var(--text-muted);
+            margin-bottom: 12px;
+        }
+
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-bottom: 14px;
+        }
+
+        .hero-tags span {
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            color: var(--text-muted);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-top: 6px;
+        }
+
+        .btn-primary,
+        .btn-ghost {
+            border-radius: 999px;
+            font-size: 13px;
+            padding: 8px 16px;
+            cursor: pointer;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid transparent;
+            transition: all 0.2s ease;
+            white-space: nowrap;
+        }
+
+        .btn-primary {
+            background: linear-gradient(130deg, #ffcc4d, #ff7b5c);
+            color: #181008;
+            font-weight: 600;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.55);
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 14px 30px rgba(0, 0, 0, 0.7);
+        }
+
+        .btn-ghost {
+            background: rgba(0, 0, 0, 0.4);
+            color: var(--text-muted);
+            border-color: rgba(255, 255, 255, 0.12);
+        }
+
+        .btn-ghost:hover {
+            color: var(--accent);
+            border-color: rgba(255, 204, 77, 0.6);
+        }
+
+        .hero-badge {
+            position: absolute;
+            inset: auto 12px 12px auto;
+            font-size: 11px;
+            color: var(--text-muted);
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: rgba(0, 0, 0, 0.7);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .hero-visual {
+            border-radius: var(--radius-xl);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            background: radial-gradient(circle at 10% 0%, #ffcc4d22 0, #050816 45%, #0b1020 100%);
+            box-shadow: var(--shadow-soft);
+            padding: 18px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .orb {
+            position: absolute;
+            border-radius: 999px;
+            filter: blur(12px);
+            opacity: 0.9;
+        }
+
+        .orb-1 {
+            width: 160px;
+            height: 160px;
+            background: radial-gradient(circle, #ffcc4d, transparent 65%);
+            top: -40px;
+            left: -20px;
+        }
+
+        .orb-2 {
+            width: 130px;
+            height: 130px;
+            background: radial-gradient(circle, #6b5bff, transparent 70%);
+            bottom: -20px;
+            right: -30px;
+        }
+
+        .orb-3 {
+            width: 90px;
+            height: 90px;
+            background: radial-gradient(circle, #19d3ff, transparent 70%);
+            bottom: 40px;
+            left: 40px;
+        }
+
+        .hero-visual-inner {
+            position: relative;
+            z-index: 2;
+            border-radius: 18px;
+            padding: 14px;
+            background: rgba(0, 0, 0, 0.72);
+            border: 1px solid rgba(255, 255, 255, 0.12);
+        }
+
+        .hero-visual-title {
+            font-size: 14px;
+            margin-bottom: 6px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 10px;
+        }
+
+        .hero-visual-title span.badge {
+            font-size: 11px;
+            padding: 3px 8px;
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.04);
+            color: var(--text-muted);
+        }
+
+        .hero-cover {
+            border-radius: 18px;
+            border: 1px solid rgba(255, 255, 255, 0.16);
+            background: radial-gradient(circle at 20% 0%, #ffcc4d33, #050816 55%, #0b1020 100%);
+            padding: 10px;
+            text-align: center;
+            font-size: 12px;
+            color: var(--text-muted);
+        }
+
+        .hero-cover-box {
+            height: 180px;
+            border-radius: 16px;
+            border: 1px dashed rgba(255, 255, 255, 0.24);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 13px;
+            padding: 12px;
+            margin-bottom: 6px;
+        }
+
+        .hero-cover-note {
+            font-size: 11px;
+        }
+
+        .section {
+            margin-top: 36px;
+        }
+
+        .section-header {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 8px;
+            margin-bottom: 14px;
+        }
+
+        .section-title {
+            font-size: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .section-title span.icon {
+            font-size: 22px;
+        }
+
+        .section-subtitle {
+            font-size: 13px;
+            color: var(--text-muted);
+        }
+
+        .card {
+            padding: 16px 14px;
+            border-radius: var(--radius-xl);
+            border: 1px solid var(--border-soft);
+            background: rgba(5, 8, 22, 0.96);
+            box-shadow: var(--shadow-soft);
+        }
+
+        .card-soft {
+            background: rgba(5, 8, 22, 0.9);
+            border-style: dashed;
+        }
+
+        .card h3 {
+            font-size: 16px;
+            margin-bottom: 8px;
+        }
+
+        .card p {
+            font-size: 14px;
+            color: var(--text-muted);
+            margin-bottom: 8px;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+            gap: 18px;
+        }
+
+        @media (max-width: 860px) {
+            .grid-2 {
+                grid-template-columns: minmax(0, 1fr);
+            }
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+            margin-top: 8px;
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        table thead {
+            background: linear-gradient(120deg, #6b5bff33, #19d3ff33);
+        }
+
+        table th,
+        table td {
+            padding: 7px 8px;
+            text-align: right;
+        }
+
+        table th {
+            font-weight: 600;
+            font-size: 11px;
+        }
+
+        table tr:nth-child(even) td {
+            background: rgba(255, 255, 255, 0.03);
+        }
+
+        .pill-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 6px;
+        }
+
+        .pill {
+            font-size: 11px;
+            padding: 4px 8px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            background: rgba(255, 255, 255, 0.02);
+            color: var(--text-muted);
+        }
+
+        .code-block {
+            background: #050612;
+            border-radius: 14px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            padding: 10px 12px;
+            font-family: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo,
+                Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+            font-size: 11px;
+            direction: ltr;
+            text-align: left;
+            color: #e5e7ff;
+            overflow-x: auto;
+            margin-top: 8px;
+        }
+
+        .rap-block {
+            margin-top: 14px;
+            padding: 12px 12px 10px;
+            border-radius: 16px;
+            border: 1px dashed rgba(255, 255, 255, 0.2);
+            background: radial-gradient(circle at top, #1b1f3b55, transparent 60%);
+            font-size: 13px;
+        }
+
+        .rap-line {
+            display: block;
+        }
+
+        .footer {
+            margin-top: 32px;
+            padding-top: 18px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 11px;
+            color: var(--text-muted);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .footer-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+        }
+
+        .footer-tags span {
+            padding: 3px 7px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.08);
+            font-size: 10px;
+        }
+
+        a.link-inline {
+            color: var(--accent-3);
+            text-decoration: none;
+            border-bottom: 1px dotted rgba(25, 211, 255, 0.6);
+        }
+
+        a.link-inline:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="nav-inner">
+            <div class="brand">
+                <div class="brand-icon">🔥</div>
+                <div class="brand-text-main">
+                    <span>SoulFire Ascension – SA</span>
+                    <span>Holy Afro–Trap Album by AnLoMinus</span>
+                </div>
+            </div>
+            <nav class="nav-links">
+                <a href="#about">על האלבום</a>
+                <a href="#tracks">רשימת שירים</a>
+                <a href="#highlights">השירים המרכזיים</a>
+                <a href="#suno">שימוש ב-SUNO</a>
+                <a href="#credits">קרדיטים</a>
+                <a href="../index.html">← חזרה ל-SunoCraft</a>
+                <a href="SC-SoulFire-Prompts.md" target="_blank">🎧 פרומפטים מלאים</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="page">
+        <!-- HERO -->
+        <section class="hero" id="top">
+            <div class="hero-text">
+                <div class="hero-pill">
+                    <span class="emoji">🎧</span>
+                    אלבום קדוש • Afro • Trap • EDM • Holy Rap
+                </div>
+                <h1>
+                    <span>SoulFire Ascension</span> – אלבום עליית הנשמה באש קדושה
+                </h1>
+                <p class="hero-subtitle">
+                    18 רצועות של אש נשמה, קדושה, התעוררות ועלייה – משלב Afro House,
+                    Trap קדוש, מקהלות שמימיות וראפ הודאה. נבנה ללב, לגוף ולריקוד
+                    של הנשמה, עם כיוון מלא לשילוב ב-SUNO.
+                </p>
+                <div class="hero-tags">
+                    <span>🔥 Holy Trap 4/4</span>
+                    <span>🎛 Afro Electro</span>
+                    <span>👑 Temple EDM</span>
+                    <span>🕯 Spiritual Hip-Hop</span>
+                    <span>✨ Kabbalah Sparks</span>
+                </div>
+                <div class="hero-actions">
+                    <a href="#tracks" class="btn-primary">🎵 קפיצה לרשימת השירים</a>
+                    <a href="SC-SoulFire-Prompts.md" target="_blank" class="btn-primary">🎧 פרומפטים מלאים (18)</a>
+                    <a href="#suno" class="btn-ghost">🎚 איך להריץ ב-SUNO</a>
+                    <a href="../index.html" class="btn-ghost">← חזרה ל-SunoCraft</a>
+                </div>
+                <div class="hero-badge">
+                    AnLoMinus • SoulFire Ascension – SA • 2025
+                </div>
+            </div>
+
+            <aside class="hero-visual" aria-hidden="true">
+                <div class="orb orb-1"></div>
+                <div class="orb orb-2"></div>
+                <div class="orb orb-3"></div>
+                <div class="hero-visual-inner">
+                    <div class="hero-visual-title">
+                        <span>עטיפת אלבום – SoulFire Ascension</span>
+                        <span class="badge">Placeholder • 4K Art</span>
+                    </div>
+                    <div class="hero-cover">
+                        <div class="hero-cover-box">
+                            כאן תעלה את תמונת האלבום שלך (4K)
+                            רקע קוסמי • אש נשמה • ברקים קדושים • כתר אור עליון
+                        </div>
+                        <div class="hero-cover-note">
+                            מומלץ להשתמש באותו סטייל כמו המאגרים:
+                            ניאון הולוגרפי, אבק קוסמי, ניצוצות, מגן דוד זוהר.
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </section>
+
+        <!-- ABOUT -->
+        <section class="section" id="about">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="icon">🔥</span>
+                    על האלבום – SoulFire Ascension
+                </h2>
+                <p class="section-subtitle">
+                    מסע של 18 מדרגות – מהולדת האור, דרך שערי אש, ועד עלייה סופית.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>מהות האלבום</h3>
+                <p>
+                    האלבום “SoulFire Ascension” נבנה כמסע התעלות של הנשמה:
+                    מתחיל ב־<strong>Birth of Light</strong> (יהי אור), עובר דרך
+                    <strong>Temple Frequency</strong>, <strong>Lion of Judah Flow</strong>,
+                    <strong>Gate of Fire</strong>, <strong>Shofar Awakening</strong>,
+                    ומסתיים ב־<strong>Final Ascension</strong> – סיום כמו התחלה חדשה.
+                </p>
+                <p>
+                    כל רצועה קיבלה:
+                </p>
+                <ul>
+                    <li>שם אנגלי ברור, מותאם ל-GitHub ול-SUNO</li>
+                    <li>סגנון מוזיקלי (Afro / Trap / EDM / Hip-Hop)</li>
+                    <li>וייב פנימי: קדושה, תיקון, שמחה, מאבק, עלייה</li>
+                    <li>כוונה רוחנית – פסוק, מידה ותמה לעבודה</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- TRACKLIST -->
+        <section class="section" id="tracks">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="icon">🎵</span>
+                    רשימת השירים – Tracklist (18)
+                </h2>
+                <p class="section-subtitle">
+                    כל שיר כאילו קלף עבודה: שם, סגנון, וייב, מיקוד.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>Tracklist Overview</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>#</th>
+                            <th>Track Name</th>
+                            <th>Style</th>
+                            <th>Vibe</th>
+                            <th>Theme</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>01</td>
+                            <td>Birth of Light</td>
+                            <td>Afro Electro Holy</td>
+                            <td>Creation, “Yehi Or”</td>
+                            <td>תחילת הבריאה, פתיחת האור</td>
+                        </tr>
+                        <tr>
+                            <td>02</td>
+                            <td>Sacred Pulse</td>
+                            <td>Holy Trap</td>
+                            <td>Heartbeat of Faith</td>
+                            <td>דופק קדוש, ביטחון בה׳</td>
+                        </tr>
+                        <tr>
+                            <td>03</td>
+                            <td>Temple Frequency</td>
+                            <td>Choir EDM</td>
+                            <td>Holy Space</td>
+                            <td>תדר של מקדש, מקהלה עליונה</td>
+                        </tr>
+                        <tr>
+                            <td>04</td>
+                            <td>SoulFire Run</td>
+                            <td>Afro Trap</td>
+                            <td>Running with Fire</td>
+                            <td>ריצה קדושה קדימה בלי פחד</td>
+                        </tr>
+                        <tr>
+                            <td>05</td>
+                            <td>Heaven Drums</td>
+                            <td>Tribal Electro</td>
+                            <td>Heaven Rhythm</td>
+                            <td>תופי שמיים, ריקוד רוחני</td>
+                        </tr>
+                        <tr>
+                            <td>06</td>
+                            <td>Lion of Judah Flow</td>
+                            <td>Holy Rap Anthem</td>
+                            <td>Warrior Courage</td>
+                            <td>גור אריה יהודה – אומץ וגבורה</td>
+                        </tr>
+                        <tr>
+                            <td>07</td>
+                            <td>Kabbalah Sparks</td>
+                            <td>Mystic Hip-Hop</td>
+                            <td>Wisdom Sparks</td>
+                            <td>ניצוצי חכמה וקבלה</td>
+                        </tr>
+                        <tr>
+                            <td>08</td>
+                            <td>Gate of Fire</td>
+                            <td>Epic Trap</td>
+                            <td>Judgment & Courage</td>
+                            <td>כניסה דרך שער אש ותיקון</td>
+                        </tr>
+                        <tr>
+                            <td>09</td>
+                            <td>Angel Choir Rise</td>
+                            <td>Heaven EDM</td>
+                            <td>Angel Uplift</td>
+                            <td>שירת מלאכים, עלייה לרוחב</td>
+                        </tr>
+                        <tr>
+                            <td>10</td>
+                            <td>Holy Thunder</td>
+                            <td>Electro Bass Trap</td>
+                            <td>Power & Clarity</td>
+                            <td>קול ה׳ בכוח – זיכוך מהיר</td>
+                        </tr>
+                        <tr>
+                            <td>11</td>
+                            <td>Shofar Awakening</td>
+                            <td>Epic Afro Anthem</td>
+                            <td>Wake-up Call</td>
+                            <td>קול שופר שמעורר לב</td>
+                        </tr>
+                        <tr>
+                            <td>12</td>
+                            <td>Mystic Waters</td>
+                            <td>Deep Holy House</td>
+                            <td>Purification</td>
+                            <td>מים טהורים – רגיעה וניקוי</td>
+                        </tr>
+                        <tr>
+                            <td>13</td>
+                            <td>Sword of Spirit</td>
+                            <td>Trap Warrior</td>
+                            <td>Inner Battle</td>
+                            <td>חרב הרוח נגד היצר</td>
+                        </tr>
+                        <tr>
+                            <td>14</td>
+                            <td>Ascend the Mountain</td>
+                            <td>Epic EDM</td>
+                            <td>Step by Step</td>
+                            <td>טיפוס בהר ה׳ – מדרגה אחר מדרגה</td>
+                        </tr>
+                        <tr>
+                            <td>15</td>
+                            <td>Spirit Breath</td>
+                            <td>Holy ChillHop</td>
+                            <td>Calm Presence</td>
+                            <td>נשימת רוח – נחת ושקט</td>
+                        </tr>
+                        <tr>
+                            <td>16</td>
+                            <td>Crown of Light</td>
+                            <td>Choir Trap</td>
+                            <td>Royal Glow</td>
+                            <td>כתר אור, מלכות פנימית</td>
+                        </tr>
+                        <tr>
+                            <td>17</td>
+                            <td>Return to Heart</td>
+                            <td>Emotional Holy Rap</td>
+                            <td>Teshuva & Healing</td>
+                            <td>חזרה ללב, תיקון וריפוי</td>
+                        </tr>
+                        <tr>
+                            <td>18</td>
+                            <td>Final Ascension</td>
+                            <td>Cosmic EDM Outro</td>
+                            <td>Completion</td>
+                            <td>סיום המסע, עלייה אחרונה</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- HIGHLIGHTS -->
+        <section class="section" id="highlights">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="icon">✨</span>
+                    השירים המרכזיים + דוגמאות פזמונים
+                </h2>
+                <p class="section-subtitle">
+                    כמה רצועות מפתח עם פזמון לדוגמה – מוכן לקופי־פייסט לתוך SUNO.
+                </p>
+            </div>
+
+            <div class="grid-2">
+                <div class="card">
+                    <h3>01 • Birth of Light – Afro Electro Holy</h3>
+                    <p>וייב: “ויהי אור” בגרסה אלקטרונית–אפרו, פתיחת המסע.</p>
+                    <div class="code-block">
+                        [Chorus]
+                        The light wakes up, every shadow disappears,
+                        holy fire in my chest, burning all my fears,
+                        every step I take, new creation appears,
+                        SoulFire in my veins, rising through the years.
+                    </div>
+                </div>
+
+                <div class="card card-soft">
+                    <h3>17 • Return to Heart – Emotional Holy Rap</h3>
+                    <p>וייב: תשובה, ריפוי, חזרה ללב האמיתי.</p>
+                    <div class="code-block">
+                        [Chorus]
+                        I return to the heart where the truth still glows,
+                        washing all the pain that my story knows,
+                        every tear I dropped turns to holy flows,
+                        I'm aligned with the Light – and my spirit grows.
+                    </div>
+                </div>
+            </div>
+
+            <div class="rap-block">
+                <p>
+                    <span class="rap-line">⚡ כל טראק הוא שער, כל ביט הוא מדרגה,</span>
+                    <span class="rap-line">⚡ כל מילה שאתה זורק מרפאה עוד נגיעה,</span>
+                    <span class="rap-line">⚡ SoulFire Ascension מעלה תודעה,</span>
+                    <span class="rap-line">⚡ מהאדמה עד שמיים – זאת הדרך שלך.</span>
+                </p>
+            </div>
+        </section>
+
+        <!-- SUNO USAGE -->
+        <section class="section" id="suno">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="icon">🎚️</span>
+                    איך להשתמש באלבום בתוך SUNO
+                </h2>
+                <p class="section-subtitle">
+                    חיבור ישיר למאגר SunoCraft (SC) – כל שיר הופך לפרומפט.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>תבנית פרומפט בסיסית לכל שיר באלבום</h3>
+                <p>לכל Track מהטבלה למעלה, מחליפים רק את השם ואת הסטייל:</p>
+                <div class="code-block">
+                    GENRE: Afro House + Trap + Holy Rap
+                    BPM: 110–132
+                    STYLE: mystical, holy, energetic, emotional, cosmic fire
+                    INSTRUMENTS: deep kick, wide tribal drums, sub bass, bright synth sparks,
+                    angelic choir pads, holy atmospheres
+                    VOCALS: powerful male lead, emotional holy rap flow, angelic background choir
+
+                    LYRICS:
+                    [Verse 1]
+                    ...
+
+                    [Chorus]
+                    ...
+
+                    [Verse 2]
+                    ...
+
+                    [Bridge]
+                    ...
+                </div>
+                <p style="font-size: 12px; color: #b3b8d0; margin-top: 6px;">
+                    <strong>📥 פרומפטים מלאים:</strong> כל 18 השירים עם פרומפטים מוכנים נמצאים בקובץ
+                    <a class="link-inline" href="SC-SoulFire-Prompts.md" target="_blank" style="font-size: 12px;">
+                        SC-SoulFire-Prompts.md
+                    </a>
+                    <br />
+                    מומלץ לעיין גם במאגר <a class="link-inline" href="../index.html" target="_blank"
+                        style="font-size: 12px;">
+                        <strong>SunoCraft (SC)</strong>
+                    </a> למדריך המלא לסגנונות, BPM ותבניות ראפ קדוש.
+                </p>
+            </div>
+        </section>
+
+        <!-- CREDITS -->
+        <section class="section" id="credits">
+            <div class="section-header">
+                <h2 class="section-title">
+                    <span class="icon">📜</span>
+                    קרדיטים, מאגרים וקישורים
+                </h2>
+                <p class="section-subtitle">
+                    הכל מחובר לאקו־סיסטם של AnLoMinus ו-SunoCraft.
+                </p>
+            </div>
+
+            <div class="card">
+                <h3>קרדיטים</h3>
+                <ul>
+                    <li><strong>Concept & Vision:</strong> AnLoMinus</li>
+                    <li><strong>Album Universe:</strong> SoulFire Ascension – SA</li>
+                    <li><strong>SUNO Knowledge Base:</strong> SunoCraft (SC)</li>
+                </ul>
+
+                <h3 style="margin-top: 10px;">קישורי מאגרים</h3>
+                <p>
+                    <strong>פרומפטים מלאים (18 שירים):</strong>
+                    <a class="link-inline" href="SC-SoulFire-Prompts.md" target="_blank">
+                        SC-SoulFire-Prompts.md
+                    </a>
+                    <br />
+                    <strong>מדריך SUNO ראשי:</strong>
+                    <a class="link-inline" href="../index.html" target="_blank">
+                        SunoCraft (SC) – מדריך ראשי
+                    </a>
+                    <br />
+                    <strong>תבניות מילים:</strong>
+                    <a class="link-inline" href="../SC-HolyTrap-Lyrics.md" target="_blank">
+                        SC-HolyTrap-Lyrics.md
+                    </a>
+                    <br />
+                    <strong>חבילת פרומפטים:</strong>
+                    <a class="link-inline" href="../SC-AfroElectro-PromptPack.md" target="_blank">
+                        SC-AfroElectro-PromptPack.md
+                    </a>
+                    <br />
+                    <strong>מדריך BPM:</strong>
+                    <a class="link-inline" href="../SC-BPM-Guide.md" target="_blank">
+                        SC-BPM-Guide.md
+                    </a>
+                </p>
+
+                <h3 style="margin-top: 10px;">האשטגים מוצעים</h3>
+                <div class="pill-row">
+                    <span class="pill">#SoulFireAscension</span>
+                    <span class="pill">#AnLoMinus</span>
+                    <span class="pill">#HolyTrap</span>
+                    <span class="pill">#AfroHouse</span>
+                    <span class="pill">#SpiritualRap</span>
+                    <span class="pill">#SunoCraft</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="footer">
+            <div>
+                © 2025 SoulFire Ascension – SA • Created for <strong>AnLoMinus</strong> •
+                Holy Album Engine • כ״ו בחשוון תשפ״ו • 26/11/2025
+            </div>
+            <div class="footer-tags">
+                <span>#SoulFireAscension</span>
+                <span>#SA</span>
+                <span>#SunoAI</span>
+                <span>#HolyBeats</span>
+                <span>#AfroTrap</span>
+                <span>#KabbalahVibes</span>
+            </div>
+        </footer>
+    </main>
+</body>
+
+</html>
